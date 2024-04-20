@@ -1,0 +1,71 @@
+#subscribe {
+    background-color: var(--color-gray-100);
+    padding: 4rem 0;
+
+    .container {
+        width: 55%;
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        form {
+            .alternative {
+                margin: 2rem 0;
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+
+                .options {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            }
+
+            .form-email {
+                display: grid;
+                align-items: start;
+                grid-template-columns: 1fr auto;
+                gap: 1.5rem;
+
+                .input-group {
+                    position: relative;
+
+                    input {
+                        padding: 15px 40px; // Adjust padding as needed
+                        width: 100%;
+                        box-sizing: border-box;
+                    }
+
+                    .fa-envelope {
+                        position: absolute;
+                        left: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .btn-theme {
+                    //
+                }
+            }
+
+            span {
+                .information {
+                    /* Add your custom styles here */
+                    display: inline-block;
+                    width: auto; /* Adjust width as needed */
+                    margin-right: 10px; /* Example margin */
+                    margin-bottom: 10px; /* Example margin */
+                    /* Add any other styles you need */
+                }
+            }
+        }
+    }
+}

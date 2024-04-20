@@ -1,0 +1,42 @@
+#lightdark {
+    position: relative;
+
+    .dark-bg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-color: var(--color-gray-900);
+        width: 50vw;
+        z-index: -1;
+    }
+
+    .container {
+        padding: 3rem 0;
+        text-align: center;
+
+        .title {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+
+            h1 {
+                flex: 1;
+            }
+
+            .light {
+                text-align: right;
+                color: var(--color-gray-100);
+            }
+
+            .dark {
+                text-align: left;
+                margin-left: 50px;
+                color: var(--color-gray-900);
+            }
+
+            .img {
+                margin-left: 2px;
+            }
+        }
+    }
+}

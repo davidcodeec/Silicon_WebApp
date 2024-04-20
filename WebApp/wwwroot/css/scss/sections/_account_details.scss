@@ -1,0 +1,102 @@
+.account-details {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Aside on the left, content on the right */
+    gap: 150px;
+    margin-bottom: 70px;
+
+    .container {
+        display: flex; /* Make the container flex to control aside and content alignment */
+
+        aside {
+            border-right: 1px solid var(--color-gray-300);
+            padding-right: 20px;
+            flex: 0 0 500px; /* Ensure aside doesn't grow and maintains its size */
+        }
+
+        .content {
+            flex: 1 1 auto; /* Let content grow to fill remaining space */
+        }
+    }
+}
+
+.form-basic,
+.form-address {
+    padding: 1rem;
+
+    .form-content {
+        display: grid;
+        gap: 1rem 2rem;
+        width: 100%;
+        align-items: center; /* Align items vertically */
+    }
+
+    .form-button {
+        margin-top: 20px; /* Adjust margin for spacing */
+        display: flex;
+        justify-content: center; /* Center buttons horizontally */
+        gap: 20px; /* Add space between buttons */
+
+        button {
+            margin: 0; /* Remove default margin */
+        }
+    }
+}
+
+.form-basic {
+    .form-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "firstname lastname" "email phone" "bio bio" "buttons buttons";
+    }
+}
+
+.form-address {
+    .form-content {
+        grid-template-areas: "addressline_1 addressline_1" "addressline_2 addressline_2" "postalcode city" "buttons buttons";
+    }
+}
+
+h5 {
+    color: var(--color-theme);
+}
+
+span {
+    color: var(--color-gray-500);
+    font-weight: 400;
+}
+
+// Grid-area assignments for form fields
+#form-firstname {
+    grid-area: firstname;
+}
+
+#form-lastname {
+    grid-area: lastname;
+}
+
+#form-email {
+    grid-area: email;
+}
+
+#form-phone {
+    grid-area: phone;
+}
+
+#form-bio {
+    grid-area: bio;
+}
+
+#form-addressline-1 {
+    grid-area: addressline_1;
+}
+
+#form-addressline-2 {
+    grid-area: addressline_2;
+}
+
+#form-postalcode {
+    grid-area: postalcode;
+}
+
+#form-city {
+    grid-area: city;
+}

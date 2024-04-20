@@ -1,0 +1,61 @@
+﻿@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
+@{
+    var themeMode = Context.Request.Cookies["ThemeMode"] ?? "light";
+    var isDark = (themeMode == "dark") ? true : false;
+}
+
+<header>
+    <div class="container">
+        <a id="logo" asp-action="Home" asp-controller="Default">
+            <img src="~/images/logos/silicon-logo-@(isDark ? "dark" : "light")_theme.svg" alt="logo">
+        </a>
+
+        <nav>
+            <a asp-action="Home"  asp-controller="Default" asp-fragment="showcase">Overview</a>
+            <a asp-action="Home"   asp-controller="Default" asp-fragment="features">Features</a>
+            @if(SignInManager.IsSignedIn(User))
+            {
+                <a asp-action="Index" asp-controller="Courses">Courses</a>
+            }
+
+            <a asp-action="Contact" asp-controller="Default">Contacts</a>
+
+            @if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+            {
+                <a asp-controller="Admin" asp-action="Index">Admin Portal</a>
+            }
+        </nav>
+            
+
+        <div id="theme-switch" class="btn-switch">
+            <label>Light</label>
+            <label class="switch" for="switch-mode">
+                <input type="checkbox" id="switch-mode" checked="@isDark" />
+                <span class="slider round"></span>
+            </label>
+            <label>Dark</label>
+        </div>
+
+        <div class="account-buttons">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div class="profile">
+                    <div class="profile-image">
+                        <a asp-action="Details" asp-controller="Account">
+                            <img src="~/images/uploads/profiles/@user!.ProfileImage" alt="Profile Image" class="profile-image" />
+                        </a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <a class="btn btn-gray" asp-action="SignIn" asp-controller="Auth"><i class="fa-solid fa-right-to-bracket"></i>Sign in</a>
+                <a class="btn btn-theme" asp-action="SignUp" asp-controller="Auth"><i class="fa-solid fa-user"></i>Sign up</a>
+            }
+        </div>
+
+    </div>
+</header>

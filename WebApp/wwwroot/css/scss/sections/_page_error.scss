@@ -1,0 +1,33 @@
+.error-404 {
+    display: flex;
+    flex-direction: column; // Arrange items vertically
+    align-items: center; // Center items horizontally
+    height: 50vh; // Ensure full viewport height
+
+    .container {
+        display: flex;
+        flex-direction: column; // Arrange items vertically
+        justify-content: flex-start; // Align items to the top
+        align-items: center; // Center items horizontally
+        flex: 1; // Allow the container to take up remaining space
+        text-align: center;
+
+        .content {
+            margin-bottom: 20px; // Add margin between content and button
+
+            h1 {
+                font-size: 24px; // Adjust heading font size
+                margin-bottom: 10px; // Add margin below heading
+            }
+
+            p {
+                font-size: 16px; // Adjust paragraph font size
+                margin-bottom: 10px; // Add margin below paragraph
+            }
+        }
+
+        .button-container {
+            margin-top: auto; // Pushes the button to the bottom
+        }
+    }
+}
